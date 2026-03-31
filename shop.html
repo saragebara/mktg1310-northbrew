@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NorthBrew – Shop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css" />
+  <!-- CSS -->
+  <style>
+    .products-row { /*3 columns for each product*/
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    .product-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* border box */
+    .product-img-box {
+      border: 1.5px solid #b8aaaa;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 1rem 1rem;
+      position: relative;
+      aspect-ratio:3/4;
+      border-radius: 26px;
+    }
+
+    /* ! badge, limited stock signal */
+    .exclaim {
+      position: absolute;
+      top: -0.5rem;
+      right: -1.1rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: #C9956A;
+      font-weight: 600;
+      line-height: 1;
+    }
+
+    .product-img-box img {
+      width: 160px;        /* fixed width */
+      height: 240px;       /* fixed height */
+      object-fit: contain; /* keeps proportions */
+    }
+
+    /* info below box */
+    .product-info { padding: 0.55rem 0 0; }
+
+    .product-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: #2a1a0e;
+      display: block;
+      margin-bottom: 0.05rem;
+    }
+    .product-stock {
+      font-family: 'Caveat', cursive;
+      font-size: 1.05rem;
+      color: #C9956A;
+      display: block;
+      margin-bottom: 0.15rem;
+    }
+    .product-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .product-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: #2a1a0e;
+    }
+
+    .cart-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      color: #2a1a0e;
+      transition: color 0.2s;
+    }
+    .cart-btn:hover { color: #C9956A; }
+    .cart-btn svg { width: 30px; height: 30px; fill: currentColor; }
+
+    /* toast :P */
+    .toast {
+      position: fixed; bottom: 2rem; left: 50%;
+      transform: translateX(-50%) translateY(16px);
+      background: #2a1a0e; color: #C9956A;
+      font-family: 'Caveat', cursive; font-size: 1.2rem;
+      padding: 0.7rem 2rem;
+      border: 1px solid #C9956A;
+      opacity: 0; pointer-events: none;
+      transition: all 0.3s ease;
+    }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="gold-stripe">
+    <div class="logo-wrap"><img src="images/logo.png" alt="NorthBrew" /></div>
+  </div>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html">home</a></li>
+      <li><a href="flavours.html">flavours</a></li>
+      <li><a href="shop.html" class="active">shop</a></li>
+      <li><a href="locations.html">locations</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+<div class="page-wrap">
+
+  <p class="page-title">Order Online</p>
+  <p class="page-subtitle">Pick Your Flavour · Limited Stock Daily</p>
+  <div class="title-divider"></div>
+
+  <div class="products-row">
+
+    <!-- caramel  -->
+    <div class="product-card">
+      <div class="product-img-box">
+        <span class="exclaim">!</span>
+        <img src="images/caramel-bottle.png" alt="Caramel Iced Coffee" />
+      </div>
+      <div class="product-info">
+        <span class="product-name">caramel</span>
+        <span class="product-stock">limited stock</span>
+        <div class="product-bottom">
+          <span class="product-price">$4.49</span>
+          <button class="cart-btn" onclick="addToCart('Caramel')">
+            <!-- cart svg -->
+            <svg viewBox="0 0 24 24"><path d="M19 7h-3V6a4 4 0 0 0-8 0v1H5a1 1 0 0 0-1 1v11a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V8a1 1 0 0 0-1-1zm-9-1a2 2 0 0 1 4 0v1h-4V6zm8 13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V9h2v1a1 1 0 0 0 2 0V9h4v1a1 1 0 0 0 2 0V9h2v10z"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- vanilla -->
+    <div class="product-card">
+      <div class="product-img-box">
+        <span class="exclaim">!</span>
+        <img src="images/vanilla-bottle.png" alt="Vanilla Iced Coffee" />
+      </div>
+      <div class="product-info">
+        <span class="product-name">vanilla</span>
+        <span class="product-stock">limited stock</span>
+        <div class="product-bottom">
+          <span class="product-price">$4.49</span>
+          <button class="cart-btn" onclick="addToCart('Vanilla')">
+            <svg viewBox="0 0 24 24"><path d="M19 7h-3V6a4 4 0 0 0-8 0v1H5a1 1 0 0 0-1 1v11a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V8a1 1 0 0 0-1-1zm-9-1a2 2 0 0 1 4 0v1h-4V6zm8 13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V9h2v1a1 1 0 0 0 2 0V9h4v1a1 1 0 0 0 2 0V9h2v10z"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- americano -->
+    <div class="product-card">
+      <div class="product-img-box">
+        <span class="exclaim">!</span>
+        <img src="images/americano-bottle.png" alt="Americano Cold Brew" />
+      </div>
+      <div class="product-info">
+        <span class="product-name">americano</span>
+        <span class="product-stock">limited stock</span>
+        <div class="product-bottom">
+          <span class="product-price">$4.49</span>
+          <button class="cart-btn" onclick="addToCart('Americano')">
+            <svg viewBox="0 0 24 24"><path d="M19 7h-3V6a4 4 0 0 0-8 0v1H5a1 1 0 0 0-1 1v11a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V8a1 1 0 0 0-1-1zm-9-1a2 2 0 0 1 4 0v1h-4V6zm8 13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V9h2v1a1 1 0 0 0 2 0V9h4v1a1 1 0 0 0 2 0V9h2v10z"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</main>
+
+<!-- footer -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="images/maple-leaf-logo.png" alt="NorthBrew" />
+    </div>
+    <div class="footer-center">
+      <span class="footer-tagline">Proudly Canadian 🍁</span>
+      <ul class="footer-nav">
+        <li><a href="index.html">home</a></li>
+        <li><a href="flavours.html">flavours</a></li>
+        <li><a href="shop.html">shop</a></li>
+        <li><a href="locations.html">locations</a></li>
+      </ul>
+      <p class="footer-copy">© 2026 NorthBrew · Windsor, Ontario</p>
+    </div>
+    <div class="footer-social">
+      <p>Find us on social</p>
+      <span class="handle">@northbrewco</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+<script>
+function addToCart(name) {
+  const t = document.getElementById('toast');
+  t.textContent = name + ' added to cart!';
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2000);
+}
+</script>
+</body>
+</html>

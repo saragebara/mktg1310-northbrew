@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NorthBrew – Flavours</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css" />
+  <style>
+
+    /* 3 columns, left, bottom right and center */
+    .flavours-main {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr 1fr;
+      align-items: center;
+      gap: 0;
+      min-height:150px;
+      margin-bottom: 1rem;
+    }
+
+    /* left: caramel */
+    .fl-left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-right: 1rem;
+      align-self: start;
+      margin-top: -5px;
+    }
+    .fl-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #2a1a0e;
+      line-height: 1.1;
+    }
+    .fl-type {
+      font-family: 'Caveat', cursive;
+      font-size: 1.15rem;
+      color: #9a7a5a;
+      margin-bottom: 0.4rem;
+    }
+    .fl-desc {
+      font-family: 'Caveat', cursive;
+      font-size: 1rem;
+      color: #777;
+      line-height: 1.65;
+    }
+
+    /* right: americano */
+    .fl-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      text-align: right;
+      padding-left: 1rem;
+      align-self: start;
+      margin-top: -5px;
+    }
+
+    /* center: vanilla */
+    .fl-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .trio-img {
+      width: 85%;
+      max-width: 340px;
+      display: block;
+    }
+    .vanilla-label {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 0.3rem;
+    }
+    .vanilla-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #2a1a0e;
+      margin-top: 0.1rem;
+    }
+    .vanilla-type {
+      font-family: 'Caveat', cursive;
+      font-size: 1.1rem;
+      color: #9a7a5a;
+    }
+    .vanilla-desc {
+      font-family: 'Caveat', cursive;
+      font-size: 1rem;
+      color: #777;
+      text-align: center;
+      line-height: 1.6;
+      max-width: 260px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- header and navigation bar -->
+<header class="site-header">
+  <div class="gold-stripe">
+    <div class="logo-wrap"><img src="images/logo.png" alt="NorthBrew" /></div>
+  </div>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html">home</a></li>
+      <li><a href="flavours.html" class="active">flavours</a></li>
+      <li><a href="shop.html">shop</a></li>
+      <li><a href="locations.html">locations</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+<div class="page-wrap">
+
+  <!-- title -->
+  <p class="page-title">Our Flavours</p>
+  <p class="page-subtitle">Three Flavours · All Worth It.</p>
+  <div class="title-divider"></div>
+
+  <div class="flavours-main">
+
+    <!-- left: caramel desc -->
+    <div class="fl-left">
+      <span class="fl-name">caramel</span>
+      <span class="fl-type">iced coffee</span>
+      <span class="fl-desc">Rich cold brew balanced with warm caramel sweetness. Smooth, satisfying, and our most popular.</span>
+    </div>
+
+    <!-- center: image of bottles + vanilla desc below -->
+    <div class="fl-center">
+      <img src="images/all-three-flavours-with-arrows.png" alt="All three NorthBrew flavours" class="trio-img" />
+      <div class="vanilla-label">
+        <span class="vanilla-name">vanilla</span>
+        <span class="vanilla-type">iced coffee</span>
+        <span class="vanilla-desc">Delicate and creamy with a clean finish. Light enough for anytime.</span>
+      </div>
+    </div>
+
+    <!-- right: americano -->
+    <div class="fl-right">
+      <span class="fl-name">americano</span>
+      <span class="fl-type">cold brew</span>
+      <span class="fl-desc">Bold, dark, unapologetically strong. For the coffee purist.</span>
+    </div>
+  </div>
+
+</div>
+</main>
+
+<!-- footer -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="images/maple-leaf-logo.png" alt="NorthBrew" />
+    </div>
+    <div class="footer-center">
+      <span class="footer-tagline">Proudly Canadian 🍁</span>
+      <ul class="footer-nav">
+        <li><a href="index.html">home</a></li>
+        <li><a href="flavours.html">flavours</a></li>
+        <li><a href="shop.html">shop</a></li>
+        <li><a href="locations.html">locations</a></li>
+      </ul>
+      <p class="footer-copy">© 2026 NorthBrew · Windsor, Ontario</p>
+    </div>
+    <div class="footer-social">
+      <p>Find us on social</p>
+      <span class="handle">@northbrewco</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

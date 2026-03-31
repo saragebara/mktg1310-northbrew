@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NorthBrew – Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css" />
+  <!-- CSS styling -->
+  <style>
+    /* hero box */
+    .hero-box {
+      width: 100%;
+      margin-bottom: 0;
+    }
+    .hero-img {
+      width: 100%;
+      aspect-ratio: 16/7;
+      object-fit: cover;
+      object-position: center 35%;
+      display: block;
+      border: 1px solid #ccc;
+    }
+
+    /* slogan ("Proudly Canadian") underneath img */
+    .slogan-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 0.8rem 0 2.8rem;
+    }
+    .slogan-line { 
+      flex: 1; height: 1px; background: #bbb; display: block; 
+    }
+    .slogan-text {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.5rem;
+      color: #2a1a0e;
+      white-space: nowrap;
+    }
+
+    /* ABOUT US section */
+    .about-row {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 3rem;
+      align-items: start;
+      margin-bottom: 4rem;
+    }
+    .about-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+      color: #2a1a0e;
+      letter-spacing: 0.02em;
+    }
+    .about-body {
+      font-family: 'Caveat', cursive;
+      font-size: 1.15rem;
+      line-height: 1.85;
+      color: #555;
+      margin-bottom: 0.5rem;
+    }
+    .about-img-box { border: 1px solid #ccc; }
+    .about-img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      aspect-ratio: 4/3;
+    }
+
+    /* social media reviews */
+    .social-section {
+      background: #faf6f0;
+      border-top: 2px solid #e8d5bc;
+      border-bottom: 2px solid #e8d5bc;
+      margin: 0 -3rem;
+      padding: 3rem 3rem 3.5rem;
+    }
+    .social-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: #2a1a0e;
+      text-align: center;
+      margin-bottom: 0.3rem;
+    }
+    .social-sub {
+      font-family: 'Caveat', cursive;
+      font-size: 1.05rem;
+      color: #9a7a5a;
+      text-align: center;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.6rem;
+    }
+    .social-divider {
+      width: 60px; height: 1.5px;
+      background: #C9956A;
+      margin: 0 auto 2rem;
+    }
+
+    /* 3 review cards */
+    .reviews-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .review-card {
+      background: #fff;
+      border: 1px solid #e0cdb8;
+      border-left: 3px solid #C9956A;
+      padding: 1.4rem 1.3rem;
+    }
+    .review-stars {
+      color: #C9956A;
+      font-size: 1rem;
+      letter-spacing: 2px;
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+    .review-text {
+      font-family: 'Caveat', cursive;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #444;
+      font-style: italic;
+      margin-bottom: 0.8rem;
+    }
+    .review-author {
+      font-family: 'Caveat', cursive;
+      font-size: 0.95rem;
+      color: #9a7a5a;
+    }
+
+    /* social media image */
+    .social-img-wrap {
+      border: 1px solid #e0cdb8;
+      overflow: hidden;
+      margin-bottom: 1.2rem;
+    }
+    .social-img-wrap img {
+      width: 100%;
+      display: block;
+    }
+    .social-cta {
+      text-align: center;
+      font-family: 'Caveat', cursive;
+      font-size: 1.1rem;
+      color: #666;
+    }
+    .social-cta strong { color: #C9956A; }
+  </style>
+</head>
+<body>
+
+  <!-- header and navigation bar -->
+<header class="site-header">
+  <div class="gold-stripe">
+    <div class="logo-wrap"><img src="images/logo.png" alt="NorthBrew" /></div>
+  </div>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">home</a></li>
+      <li><a href="flavours.html">flavours</a></li>
+      <li><a href="shop.html">shop</a></li>
+      <li><a href="locations.html">locations</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+<div class="page-wrap">
+
+  <!-- Hero -->
+  <div class="hero-box">
+    <img src="images/food-truck-img.png" alt="NorthBrew truck at Riverside Windsor" class="hero-img" />
+  </div>
+
+  <!-- Slogan -->
+  <div class="slogan-row">
+    <span class="slogan-line"></span>
+    <span class="slogan-text">proudly canadian 🍁</span>
+    <span class="slogan-line"></span>
+  </div>
+
+  <!-- About -->
+  <div class="about-row">
+    <div class="about-text">
+      <p class="about-heading">ABOUT US:</p>
+      <p class="about-body">NorthBrew is a local Windsor cold brew company on wheels. We craft premium bottled iced coffee in small batches, using quality ingredients and a whole lot of Canadian pride.</p>
+      <p class="about-body">Whether you're grabbing one between classes, on your lunch break downtown, or strolling along the river, we're bringing the good stuff straight to you.</p>
+      <p class="about-body">Three flavours. One truck. Pure refreshment.</p>
+    </div>
+    <div class="about-img-box">
+      <img src="images/food-truck-img.png" alt="NorthBrew truck" class="about-img" />
+    </div>
+  </div>
+
+  <!-- social media reviews -->
+  <div class="social-section">
+    <p class="social-heading">Windsor Loves NorthBrew.</p>
+    <p class="social-sub">what people are saying</p>
+    <div class="social-divider"></div>
+
+    <div class="reviews-row">
+      <div class="review-card">
+        <span class="review-stars">★★★★★</span>
+        <p class="review-text">"Picked up a vanilla iced coffee near the University of Windsor — so smooth and refreshing. Best cold brew in the city."</p>
+        <span class="review-author">— @northbrewco customer &nbsp;·&nbsp; #WindsorEats</span>
+      </div>
+      <div class="review-card">
+        <span class="review-stars">★★★★★</span>
+        <p class="review-text">"Found my new favourite spot in Windsor! The caramel cold brew is incredible. Love that it's local 🍁"</p>
+        <span class="review-author">— @NorthBrewCo follower &nbsp;·&nbsp; Windsor, Ontario</span>
+      </div>
+      <div class="review-card">
+        <span class="review-stars">★★★★★</span>
+        <p class="review-text">"Best Windsor cold brew, seriously. The maple and vanilla flavours are unreal. Highly recommend catching the truck downtown."</p>
+        <span class="review-author">— Review by @CitySip &nbsp;·&nbsp; #NorthBrewPartner</span>
+      </div>
+    </div>
+
+    <div class="social-img-wrap">
+      <img src="images/social-media-reviews.png" alt="NorthBrew social media highlights" />
+    </div>
+
+    <p class="social-cta">Follow us <strong>@northbrewco</strong> &nbsp;·&nbsp; Share your bottle with <strong>#NorthBrewCo</strong></p>
+  </div>
+
+</div>
+</main>
+
+<!-- footer -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="images/maple-leaf-logo.png" alt="NorthBrew" />
+    </div>
+    <div class="footer-center">
+      <span class="footer-tagline">Proudly Canadian 🍁</span>
+      <ul class="footer-nav">
+        <li><a href="index.html">home</a></li>
+        <li><a href="flavours.html">flavours</a></li>
+        <li><a href="shop.html">shop</a></li>
+        <li><a href="locations.html">locations</a></li>
+      </ul>
+      <p class="footer-copy">© 2026 NorthBrew · Windsor, Ontario</p>
+    </div>
+    <div class="footer-social">
+      <p>Find us on social</p>
+      <span class="handle">@northbrewco</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
